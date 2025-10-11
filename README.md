@@ -1,4 +1,4 @@
-Riefix Services & Consulting
+Riefix Strategie & Consulting
 
 Contrary to the stated license, all rights to the code remain with the creator.
 Any further use requires the express written permission of the creator, and distribution is strictly prohibited.
