@@ -1,3 +1,11 @@
+/* Beispiel: Inhalt nur anzeigen, wenn die Breite über 1024px liegt */
+@media (max-width: 1024px) {
+    body {
+        /* Blendet den gesamten Inhalt für kleinere Bildschirme aus */
+        display: none; 
+    }
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
