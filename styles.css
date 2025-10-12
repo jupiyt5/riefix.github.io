@@ -136,20 +136,23 @@ header {
 }
 .dropdown-content a {
     color: #ffffff;
-    padding: 0.7% 0.9%;
+    padding: 1% 1%;
     text-decoration: underline overline;
     display: block;
     border-bottom: 0.1% solid #eee;
-    margin-top: 6%;
+    margin-top: 5%;
     /*margin-left: 8%;*/
     text-align: center;
 }
 .dropdown-content a:last-child {
     border-bottom: none;
 }
+.dropdown-content a:hover {
+    background-color: #575757;
+}
 .dropdown:hover .dropdown-content {
     display: block;
-    background-color: #444;
+    /*background-color: #444;*/
 }
 .dropdown:hover .dropbtn {
     background-color: #383838;
