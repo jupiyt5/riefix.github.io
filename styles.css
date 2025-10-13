@@ -6,12 +6,20 @@
     }
 }
 
+html, body {
+    height: 100%;
+    min-height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     color: #333;
-    margin: 0/*Prozent/PX?*/;
-    padding: 1.1%;
+    margin: 0;
+    /* padding: 1.1%;  <-- ENTFERNEN! */
 }
 /*header {
     background-color: #0099D5;
@@ -45,10 +53,12 @@ body {
     border-radius: 0.3%;
     box-shadow: 0% 0.1% 0.2% rgba(0, 0, 0, 0.1);
     margin-top: 1.1%;
+    margin-left: 5%;
     text-align: center;
     /*font-size: 1.1%;*/
     font-size: 150%;
     color: #0000;
+    max-width: 90%;
 }
 #Ueber_uns {
     color: white;
@@ -59,6 +69,9 @@ body {
     margin-left: 16.7%;
     margin-top: -1.1%;
     line-height: 1.5;*/
+}
+.Inhaber-container {
+    margin-bottom: 1.1%;
 }
 .Inhaber {
     display: flex;
@@ -157,9 +170,111 @@ header {
 .dropdown:hover .dropbtn {
     background-color: #383838;
 }
+
+#leistungen-container {
+    margin-top: 2%;
+}
+
 #Leistungen {
     text-align: center;
     margin-top: 2%;
+    margin-bottom: 2.5rem;
+}
+
+/* Grid für Leistungen */
+.leistungen-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    
+}
+
+/* Einzelne Leistungskarte */
+.leistung-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.leistung-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.16);
+}
+
+.leistung-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(0,153,213,0.85);
+    width: 100%;
+    text-align: center;
+    padding: 0.7rem 0;
+    letter-spacing: 0.03em;
+    z-index: 2;
+    position: relative;
+}
+
+.leistung-img {
+    width: 100%;
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Beispielbilder (ersetze die URLs durch eigene Bilder!) */
+.leistung-seo .leistung-img {
+    background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80');
+}
+.leistung-webdesign .leistung-img {
+    background-image: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80');
+}
+.leistung-beratung .leistung-img {
+    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80');
+}
+.leistung-digitalisierung .leistung-img {
+    background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80');
+}
+
+.leistung-desc {
+    padding: 1rem 1.2rem 1.2rem 1.2rem;
+    font-size: 1rem;
+    color: #222;
+    text-align: center;
+    background: #fff;
+    width: 100%;
+    min-height: 70px;
+    box-sizing: border-box;
+}
+
+/* Responsive: 2 pro Reihe auf Tablet, 1 auf Handy */
+@media (max-width: 900px) {
+    .leistungen-grid {
+        gap: 1.2rem;
+    }
+    .leistung-card {
+        width: 45vw;
+        min-width: 220px;
+        max-width: 320px;
+    }
+}
+@media (max-width: 600px) {
+    .leistungen-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .leistung-card {
+        width: 90vw;
+        min-width: 180px;
+        max-width: 98vw;
+    }
 }
 #Kontakt {
     text-align: center;
@@ -175,6 +290,7 @@ header {
     padding: 32px 24px 24px 24px;
     border-radius: 16px;
     margin: 32px auto 0 auto;
+    margin-bottom: 3%;
     box-shadow: 0 4px 24px rgba(0,0,0,0.12);
     gap: 18px;
 }
@@ -311,8 +427,8 @@ header {
     text-align: right;
     padding: 1.1% 0;
     position: relative;
-    margin-top: 1.1%;
     border-radius: 0.3%;
+    margin-top: auto; /* Footer nach unten drücken */
 }
 #legal-links {
     text-align: right;
