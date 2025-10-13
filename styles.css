@@ -1,10 +1,10 @@
 /* Beispiel: Inhalt nur anzeigen, wenn die Breite über 1024px liegt */
-@media (max-width: 1024px) {
-    body {
+/*@media (max-width: 1024px) {
+    body {*/
         /* Blendet den gesamten Inhalt für kleinere Bildschirme aus */
-        display: none; 
+        /*display: none; 
     }
-}
+}*/
 
 html, body {
     height: 100%;
@@ -31,21 +31,23 @@ body {
 
 }*/
 #firmenname {
-    /*font-size: 1.8%;*/
-    /*margin-left: -41.7%;*/
-    margin-left: -50.5%;
-    margin-top: -4.2%;
+    margin: 0;
+    font-size: 2.8rem;
+    text-align: left;
+    flex: 2 1 0;
 }
 #werbespruch {
     color: #f5f5f5;
-    /*margin-left: -24.2%;*/
-    margin-left: -28.5%;
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: left;
+    flex: 2 1 0;
 }
 #Firmenlogo {
-    width: 16.7%;
+    width: 110px;
     height: auto;
-    margin-top: -4.2%;
-    margin-left: -45.6%;
+    margin: 0;
+    display: block;
 }
 #Ueber {
     background-color: #0099D5;
@@ -98,64 +100,77 @@ body {
     max-width: 33.4%;
 }
 header {
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.1%;
     background-color: #0099D5;
     color: black;
-    padding-top: 2.8%;
-    /*text-align: center;*/
-    /*height: 8.3%;*/
-    height: 25%;
-}
-.dropdown-container {
-    /*position: absolute;*/
-    margin-left: -28%;
-    margin-top: -1%;
-    /*top: 50%;*/
-    transform: translateY(-50%);
-    height: 25%;
-    width: 4%;
-    background-color: #383838;
-    border-radius: 8%;
-}
-.dropdown {
+    padding: 2rem 2rem 1rem 2rem;
     position: relative;
-    display: inline-block;
+    gap: 0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex: 0 0 auto; /* Nimmt nur so viel Platz wie nötig */
+}
+
+.header-center {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    text-align: center; /* Zentriert Text horizontal */
+}
+
+#firmenname {
+    margin: 0;
+    font-size: 2.8rem;
+    text-align: center;
+    width: 100%;
+}
+
+#werbespruch {
+    color: #f5f5f5;
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
 }
 .dropbtn {
     background-color: #383838;
     color: white;
-    padding: 0.6% 1%;
-    font-size: 100%;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
     border: none;
-    border-radius: 0.2%;
+    border-radius: 0.2rem;
     cursor: pointer;
-    margin-left: 35%;
-    margin-top: 25%;
+    margin: 0;
 }
 .dropdown-content {
     display: none;
     position: absolute;
-    left: 0/*Prozent/PX?*/;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 110%;
     background-color: #303030;
-    width: 250%;
-    height: 300%;
-    box-shadow: 0% 0.4% 0.9% 0% rgba(0,0,0,0.2);
-    z-index: 1/*Prozent/PX?*/;
-    border-radius: 0.2%;
+    min-width: 160px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    z-index: 10;
+    border-radius: 0.2rem;
+    text-align: center;
 }
 .dropdown-content a {
     color: #ffffff;
-    padding: 1% 1%;
+    padding: 0.7rem 1rem;
     text-decoration: underline overline;
     display: block;
-    border-bottom: 0.1% solid #eee;
-    margin-top: 5%;
-    /*margin-left: 8%;*/
-    text-align: center;
+    border-bottom: 1px solid #eee;
+    margin: 0;
 }
 .dropdown-content a:last-child {
     border-bottom: none;
@@ -163,288 +178,610 @@ header {
 .dropdown-content a:hover {
     background-color: #575757;
 }
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
     display: block;
-    /*background-color: #444;*/
-}
-.dropdown:hover .dropbtn {
-    background-color: #383838;
 }
 
-#leistungen-container {
-    margin-top: 2%;
-}
-
-#Leistungen {
-    text-align: center;
-    margin-top: 2%;
-    margin-bottom: 2.5rem;
-}
-
-/* Grid für Leistungen */
-.leistungen-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 3rem;
-    
-}
-
-/* Einzelne Leistungskarte */
-.leistung-card {
-    background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-    width: 240px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-.leistung-card:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.16);
-}
-
-.leistung-title {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #fff;
-    background: rgba(0,153,213,0.85);
-    width: 100%;
-    text-align: center;
-    padding: 0.7rem 0;
-    letter-spacing: 0.03em;
-    z-index: 2;
-    position: relative;
-}
-
-.leistung-img {
-    width: 100%;
-    height: 120px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Beispielbilder (ersetze die URLs durch eigene Bilder!) */
-.leistung-seo .leistung-img {
-    background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80');
-}
-.leistung-webdesign .leistung-img {
-    background-image: url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80');
-}
-.leistung-beratung .leistung-img {
-    background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80');
-}
-.leistung-digitalisierung .leistung-img {
-    background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80');
-}
-
-.leistung-desc {
-    padding: 1rem 1.2rem 1.2rem 1.2rem;
-    font-size: 1rem;
-    color: #222;
-    text-align: center;
-    background: #fff;
-    width: 100%;
-    min-height: 70px;
-    box-sizing: border-box;
-}
-
-/* Responsive: 2 pro Reihe auf Tablet, 1 auf Handy */
-@media (max-width: 900px) {
-    .leistungen-grid {
-        gap: 1.2rem;
+/* Responsive Anpassungen */
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.7rem;
+        padding: 2rem 0 1rem 0;
+        text-align: center;
     }
-    .leistung-card {
-        width: 45vw;
-        min-width: 220px;
-        max-width: 320px;
+    .header-left {
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+    #Firmenlogo {
+        margin: 0 0.8rem 0 0;
+        width: 80px;
+        max-width: 25vw;
+    }
+    .header-center {
+        width: 100%;
+    }
+    #firmenname {
+        font-size: 2.2rem;
+    }
+    #werbespruch {
+        font-size: 1.3rem;
+    }
+    .dropdown-container {
+        margin: 0;
+        width: auto;
+        justify-content: center;
     }
 }
 @media (max-width: 600px) {
-    .leistungen-grid {
-        flex-direction: column;
-        align-items: center;
+    #firmenname {
+        font-size: 1.5rem;
     }
-    .leistung-card {
-        width: 90vw;
-        min-width: 180px;
-        max-width: 98vw;
+    #werbespruch {
+        font-size: 1.1rem;
+    }
+    #Firmenlogo {
+        width: 60px;
+        max-width: 40vw;
+    }
+    .header-left {
+        gap: 0.5rem;
     }
 }
-#Kontakt {
-    text-align: center;
-    margin-top: 2%;
-}
-#contact-form {
+#Ueber {
     background-color: #0099D5;
-    width: 100%;
-    max-width: 420px;
+    padding: 1.1%;
+    border-radius: 0.3%;
+    box-shadow: 0% 0.1% 0.2% rgba(0, 0, 0, 0.1);
+    margin-top: 1.1%;
+    margin-left: 5%;
+    text-align: center;
+    /*font-size: 1.1%;*/
+    font-size: 150%;
+    color: #0000;
+    max-width: 90%;
+}
+#Ueber_uns {
+    color: white;
+}
+#ueber_text {
+    color: #333;
+    /*max-width: 66.7%;
+    margin-left: 16.7%;
+    margin-top: -1.1%;
+    line-height: 1.5;*/
+}
+.Inhaber-container {
+    margin-bottom: 1.1%;
+}
+.Inhaber {
+    display: flex;
+    flex-direction: row; /* Ändert die Richtung auf horizontal */
+    align-items: center;
+    justify-content: center;
+    gap: 20%; /* Abstand zwischen Bild und Text */
+    /*margin-bottom: 30px;*/
+    margin-top: 1.1%;
+    padding: 1.1%;
+    border-radius: 0.3%;
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+    background-color: #0099D5;
+    width: 50%;
+    margin-left: 22.2%;
+}
+.Inhaber img {
+    width: 11.1%;
+    height: 9.4%;
+    margin-bottom: 0.3%;
+}
+.Inhaber p {
+    text-align: center;
+    max-width: 33.4%;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0099D5;
+    color: black;
+    padding: 2rem 2rem 1rem 2rem;
+    position: relative;
+    gap: 0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex: 0 0 auto; /* Nimmt nur so viel Platz wie nötig */
+}
+
+.header-center {
+    flex: 1 1 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 32px 24px 24px 24px;
-    border-radius: 16px;
-    margin: 32px auto 0 auto;
-    margin-bottom: 3%;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-    gap: 18px;
+    justify-content: center;
+    min-width: 0;
+    text-align: center; /* Zentriert Text horizontal */
 }
-#contact-form label {
+
+#firmenname {
+    margin: 0;
+    font-size: 2.8rem;
+    text-align: center;
     width: 100%;
-    color: #fff;
-    font-weight: 500;
-    margin-top: 0;
-    margin-bottom: 6px;
-    display: flex;
-    flex-direction: column;
-    font-size: 1.1em;
-    letter-spacing: 0.01em;
 }
-#contact-form input[type="email"],
-#contact-form input[type="text"],
-#contact-form select,
-#contact-form textarea {
+
+#werbespruch {
+    color: #f5f5f5;
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: center;
     width: 100%;
-    padding: 10px 12px;
+}
+.dropbtn {
+    background-color: #383838;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
     border: none;
-    border-radius: 6px;
-    margin-top: 4px;
-    font-size: 1em;
-    background: #f5f5f5;
-    color: #222;
-    box-sizing: border-box;
-    transition: box-shadow 0.2s;
-}
-#contact-form input[type="email"]:focus,
-#contact-form input[type="text"]:focus,
-#contact-form select:focus,
-#contact-form textarea:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px #005f8f;
-}
-#contact-form textarea {
-    min-height: 90px;
-    resize: vertical;
-}
-#contact-form input[type="file"] {
-    background: transparent;
-    color: #fff;
-    padding: 0;
-    border: none;
-    margin-top: 4px;
-}
-#contact-form button[type="submit"] {
-    margin-top: 12px;
-    padding: 10px 0;
-    width: 100%;
-    background: #fff;
-    color: #0099D5;
-    border: none;
-    border-radius: 6px;
-    font-size: 1.1em;
-    font-weight: bold;
+    border-radius: 0.2rem;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    margin: 0;
 }
-#contact-form button[type="submit"]:hover {
-    background: #007bb5;
-    color: #fff;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 110%;
+    background-color: #303030;
+    min-width: 160px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    z-index: 10;
+    border-radius: 0.2rem;
+    text-align: center;
+}
+.dropdown-content a {
+    color: #ffffff;
+    padding: 0.7rem 1rem;
+    text-decoration: underline overline;
+    display: block;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+}
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: block;
 }
 
-/* Support-Felder im Kontaktformular */
-#support-fields {
-    width: 100%;
-    background: rgba(255,255,255,0.07);
-    border-radius: 8px;
-    padding: 16px 12px 10px 12px;
-    margin-top: 8px;
-    margin-bottom: 0;
+/* Responsive Anpassungen */
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.7rem;
+        padding: 2rem 0 1rem 0;
+        text-align: center;
+    }
+    .header-left {
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+    #Firmenlogo {
+        margin: 0 0.8rem 0 0;
+        width: 80px;
+        max-width: 25vw;
+    }
+    .header-center {
+        width: 100%;
+    }
+    #firmenname {
+        font-size: 2.2rem;
+    }
+    #werbespruch {
+        font-size: 1.3rem;
+    }
+    .dropdown-container {
+        margin: 0;
+        width: auto;
+        justify-content: center;
+    }
+}
+@media (max-width: 600px) {
+    #firmenname {
+        font-size: 1.5rem;
+    }
+    #werbespruch {
+        font-size: 1.1rem;
+    }
+    #Firmenlogo {
+        width: 60px;
+        max-width: 40vw;
+    }
+    .header-left {
+        gap: 0.5rem;
+    }
+}
+#Ueber {
+    background-color: #0099D5;
+    padding: 1.1%;
+    border-radius: 0.3%;
+    box-shadow: 0% 0.1% 0.2% rgba(0, 0, 0, 0.1);
+    margin-top: 1.1%;
+    margin-left: 5%;
+    text-align: center;
+    /*font-size: 1.1%;*/
+    font-size: 150%;
+    color: #0000;
+    max-width: 90%;
+}
+#Ueber_uns {
+    color: white;
+}
+#ueber_text {
+    color: #333;
+    /*max-width: 66.7%;
+    margin-left: 16.7%;
+    margin-top: -1.1%;
+    line-height: 1.5;*/
+}
+.Inhaber-container {
+    margin-bottom: 1.1%;
+}
+.Inhaber {
+    display: flex;
+    flex-direction: row; /* Ändert die Richtung auf horizontal */
+    align-items: center;
+    justify-content: center;
+    gap: 20%; /* Abstand zwischen Bild und Text */
+    /*margin-bottom: 30px;*/
+    margin-top: 1.1%;
+    padding: 1.1%;
+    border-radius: 0.3%;
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+    background-color: #0099D5;
+    width: 50%;
+    margin-left: 22.2%;
+}
+.Inhaber img {
+    width: 11.1%;
+    height: 9.4%;
+    margin-bottom: 0.3%;
+}
+.Inhaber p {
+    text-align: center;
+    max-width: 33.4%;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0099D5;
+    color: black;
+    padding: 2rem 2rem 1rem 2rem;
+    position: relative;
+    gap: 0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex: 0 0 auto; /* Nimmt nur so viel Platz wie nötig */
+}
+
+.header-center {
+    flex: 1 1 0;
     display: flex;
     flex-direction: column;
-    gap: 14px;
-    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    text-align: center; /* Zentriert Text horizontal */
 }
 
-#support-fields label {
-    color: #fff;
-    font-weight: 500;
-    font-size: 1em;
-    margin-bottom: 0;
-    margin-top: 0;
-    letter-spacing: 0.01em;
-}
-
-#support-fields input[type="text"] {
+#firmenname {
+    margin: 0;
+    font-size: 2.8rem;
+    text-align: center;
     width: 100%;
-    padding: 10px 12px;
+}
+
+#werbespruch {
+    color: #f5f5f5;
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
+.dropbtn {
+    background-color: #383838;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
     border: none;
-    border-radius: 6px;
-    margin-top: 4px;
-    font-size: 1em;
-    background: #f5f5f5;
-    color: #222;
-    box-sizing: border-box;
-    transition: box-shadow 0.2s;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    margin: 0;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 110%;
+    background-color: #303030;
+    min-width: 160px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    z-index: 10;
+    border-radius: 0.2rem;
+    text-align: center;
+}
+.dropdown-content a {
+    color: #ffffff;
+    padding: 0.7rem 1rem;
+    text-decoration: underline overline;
+    display: block;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+}
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: block;
 }
 
-#support-fields input[type="text"]:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px #005f8f;
+/* Responsive Anpassungen */
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.7rem;
+        padding: 2rem 0 1rem 0;
+        text-align: center;
+    }
+    .header-left {
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+    #Firmenlogo {
+        margin: 0 0.8rem 0 0;
+        width: 80px;
+        max-width: 25vw;
+    }
+    .header-center {
+        width: 100%;
+    }
+    #firmenname {
+        font-size: 2.2rem;
+    }
+    #werbespruch {
+        font-size: 1.3rem;
+    }
+    .dropdown-container {
+        margin: 0;
+        width: auto;
+        justify-content: center;
+    }
 }
-
-#support-fields input[type="checkbox"] {
-    accent-color: #0099D5;
-    width: 18px;
-    height: 18px;
-    margin-right: 6px;
-    vertical-align: middle;
+@media (max-width: 600px) {
+    #firmenname {
+        font-size: 1.5rem;
+    }
+    #werbespruch {
+        font-size: 1.1rem;
+    }
+    #Firmenlogo {
+        width: 60px;
+        max-width: 40vw;
+    }
+    .header-left {
+        gap: 0.5rem;
+    }
 }
-
-#support-fields > label > div {
-    display: flex;
-    gap: 18px;
-    margin-top: 6px;
-}
-
-#support-fields label[style] {
-    color: #fff !important;
-    font-weight: normal !important;
-    font-size: 1em !important;
-    margin: 0 !important;
-    letter-spacing: 0 !important;
-}
-
-/* Neuer Footer-Stil */
-.footer {
+#Ueber {
     background-color: #0099D5;
-    color: white;
-    text-align: right;
-    padding: 1.1% 0;
-    position: relative;
+    padding: 1.1%;
     border-radius: 0.3%;
-    margin-top: auto; /* Footer nach unten drücken */
+    box-shadow: 0% 0.1% 0.2% rgba(0, 0, 0, 0.1);
+    margin-top: 1.1%;
+    margin-left: 5%;
+    text-align: center;
+    /*font-size: 1.1%;*/
+    font-size: 150%;
+    color: #0000;
+    max-width: 90%;
 }
-#legal-links {
-    text-align: right;
-    margin-top: -2.2%;
-    /*margin-right: 1.1%;*/
-}
-#legal-links a {
+#Ueber_uns {
     color: white;
-    text-decoration: none;
-    margin: 0 1.1%;
 }
-#legal-links a:hover {
-    text-decoration: underline;
-    color:#ffffff;
+#ueber_text {
+    color: #333;
+    /*max-width: 66.7%;
+    margin-left: 16.7%;
+    margin-top: -1.1%;
+    line-height: 1.5;*/
 }
-#footer-text {
-    text-align: left;
-    margin-left: 1.1%;
+.Inhaber-container {
+    margin-bottom: 1.1%;
+}
+.Inhaber {
+    display: flex;
+    flex-direction: row; /* Ändert die Richtung auf horizontal */
+    align-items: center;
+    justify-content: center;
+    gap: 20%; /* Abstand zwischen Bild und Text */
+    /*margin-bottom: 30px;*/
+    margin-top: 1.1%;
+    padding: 1.1%;
+    border-radius: 0.3%;
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+    background-color: #0099D5;
+    width: 50%;
+    margin-left: 22.2%;
+}
+.Inhaber img {
+    width: 11.1%;
+    height: 9.4%;
+    margin-bottom: 0.3%;
+}
+.Inhaber p {
+    text-align: center;
+    max-width: 33.4%;
+}
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0099D5;
+    color: black;
+    padding: 2rem 2rem 1rem 2rem;
+    position: relative;
+    gap: 0;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex: 0 0 auto; /* Nimmt nur so viel Platz wie nötig */
+}
+
+.header-center {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    text-align: center; /* Zentriert Text horizontal */
+}
+
+#firmenname {
+    margin: 0;
+    font-size: 2.8rem;
+    text-align: center;
+    width: 100%;
+}
+
+#werbespruch {
+    color: #f5f5f5;
+    margin: 0;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
+.dropbtn {
+    background-color: #383838;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    margin: 0;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 110%;
+    background-color: #303030;
+    min-width: 160px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    z-index: 10;
+    border-radius: 0.2rem;
+    text-align: center;
+}
+.dropdown-content a {
+    color: #ffffff;
+    padding: 0.7rem 1rem;
+    text-decoration: underline overline;
+    display: block;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+}
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+.dropdown-content a:hover {
+    background-color: #575757;
+}
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.7rem;
+        padding: 2rem 0 1rem 0;
+        text-align: center;
+    }
+    .header-left {
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+    #Firmenlogo {
+        margin: 0 0.8rem 0 0;
+        width: 80px;
+        max-width: 25vw;
+    }
+    .header-center {
+        width: 100%;
+    }
+    #firmenname {
+        font-size: 2.2rem;
+    }
+    #werbespruch {
+        font-size: 1.3rem;
+    }
+    .dropdown-container {
+        margin: 0;
+        width: auto;
+        justify-content: center;
+    }
+}
+@media (max-width: 600px) {
+    #firmenname {
+        font-size: 1.5rem;
+    }
+    #werbespruch {
+        font-size: 1.1rem;
+    }
+    #Firmenlogo {
+        width: 60px;
+        max-width: 40vw;
+    }
+    .header-left {
+        gap: 0.5rem;
+    }
 }
