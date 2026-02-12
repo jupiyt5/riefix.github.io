@@ -183,189 +183,92 @@ header {
     display: block;
 }
 
-/* Responsive Anpassungen */
-@media (max-width: 1024px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 0.7rem;
-        padding: 2rem 0 1rem 0;
-        text-align: center;
-    }
-    .header-left {
-        flex-direction: row;
-        justify-content: center;
-        margin-bottom: 0.5rem;
-    }
-    #Firmenlogo {
-        margin: 0 0.8rem 0 0;
-        width: 80px;
-        max-width: 25vw;
-    }
-    .header-center {
-        width: 100%;
-    }
-    #firmenname {
-        font-size: 2.2rem;
-    }
-    #werbespruch {
-        font-size: 1.3rem;
-    }
-    .dropdown-container {
-        margin: 0;
-        width: auto;
-        justify-content: center;
-    }
+/* Moderne, responsive Header-Styles */
+.site-header {
+    background: linear-gradient(90deg,#0b4660 0%, #06364a 100%);
+    color: #eaf7fb;
+    box-shadow: 0 6px 22px rgba(4,30,40,0.12);
+    border-bottom: 2px solid rgba(255,255,255,0.03);
 }
-@media (max-width: 600px) {
-    #firmenname {
-        font-size: 1.5rem;
-    }
-    #werbespruch {
-        font-size: 1.1rem;
-    }
-    #Firmenlogo {
-        width: 60px;
-        max-width: 40vw;
-    }
-    .header-left {
-        gap: 0.5rem;
-    }
-}
-#Ueber {
-    background-color: #0099D5;
-    padding: 1.1%;
-    border-radius: 0.3%;
-    box-shadow: 0% 0.1% 0.2% rgba(0, 0, 0, 0.1);
-    margin-top: 1.1%;
-    margin-left: 5%;
-    text-align: center;
-    /*font-size: 1.1%;*/
-    font-size: 150%;
-    color: #0000;
-    max-width: 90%;
-}
-#Ueber_uns {
-    color: white;
-}
-#ueber_text {
-    color: #333;
-    /*max-width: 66.7%;
-    margin-left: 16.7%;
-    margin-top: -1.1%;
-    line-height: 1.5;*/
-}
-.Inhaber-container {
-    margin-bottom: 1.1%;
-}
-.Inhaber {
-    display: flex;
-    flex-direction: row; /* Ändert die Richtung auf horizontal */
-    align-items: center;
-    justify-content: center;
-    gap: 20%; /* Abstand zwischen Bild und Text */
-    /*margin-bottom: 30px;*/
-    margin-top: 1.1%;
-    padding: 1.1%;
-    border-radius: 0.3%;
-    /*background-color: rgba(0, 0, 0, 0.5);*/
-    background-color: #0099D5;
-    width: 50%;
-    margin-left: 22.2%;
-}
-.Inhaber img {
-    width: 11.1%;
-    height: 9.4%;
-    margin-bottom: 0.3%;
-}
-.Inhaber p {
-    text-align: center;
-    max-width: 33.4%;
-}
-header {
+.site-header .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: #0099D5;
-    color: black;
-    padding: 2rem 2rem 1rem 2rem;
-    position: relative;
-    gap: 0;
+    justify-content: space-between;
+    gap: 1rem;
 }
-
-.header-left {
+.site-header .logo-wrap {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
-    flex: 0 0 auto; /* Nimmt nur so viel Platz wie nötig */
+    gap: 0.9rem;
+    flex: 0 0 auto;
 }
-
-.header-center {
-    flex: 1 1 0;
+.site-header #Firmenlogo {
+    width: 72px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(3,22,28,0.12);
+    background: rgba(255,255,255,0.03);
+}
+.site-header .brand {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    line-height: 1;
     min-width: 0;
-    text-align: center; /* Zentriert Text horizontal */
+}
+.site-header .brand #firmenname {
+    font-size: 1.45rem;
+    color: #eaf7fb;
+    margin: 0;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.site-header .brand #werbespruch {
+    font-size: 0.95rem;
+    margin: 0;
+    color: rgba(234,247,251,0.9);
+    font-weight: 500;
 }
 
-#firmenname {
-    margin: 0;
-    font-size: 2.8rem;
-    text-align: center;
-    width: 100%;
-}
-
-#werbespruch {
-    color: #f5f5f5;
-    margin: 0;
-    font-size: 1.5rem;
-    text-align: center;
-    width: 100%;
+/* Navigation (rechts) */
+.site-header .nav {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex: 0 0 auto;
 }
 .dropbtn {
-    background-color: #383838;
-    color: white;
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 0.2rem;
+    background: rgba(255,255,255,0.08);
+    color: #fff;
+    padding: 0.5rem 0.9rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: none;
+    font-weight: 600;
     cursor: pointer;
-    margin: 0;
 }
 .dropdown-content {
-    display: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 110%;
-    background-color: #303030;
-    min-width: 160px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    z-index: 10;
-    border-radius: 0.2rem;
-    text-align: center;
+    top: calc(100% + 8px);
+    right: 0;
+    left: auto;
+    background-color: rgba(3,22,28,0.95);
+    min-width: 180px;
+    padding: 0.3rem;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(3,22,28,0.35);
 }
 .dropdown-content a {
-    color: #ffffff;
-    padding: 0.7rem 1rem;
-    text-decoration: underline overline;
+    color: #eaf7fb;
+    padding: 0.55rem 0.85rem;
     display: block;
-    border-bottom: 1px solid #eee;
-    margin: 0;
+    text-decoration: none;
+    border-radius: 6px;
 }
-.dropdown-content a:last-child {
-    border-bottom: none;
-}
-.dropdown-content a:hover {
-    background-color: #575757;
-}
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content {
-    display: block;
-}
+.dropdown-content a:hover { background: rgba(255,255,255,0.04); }
 
 /* Responsive Anpassungen */
 @media (max-width: 1024px) {
@@ -416,372 +319,379 @@ header {
     .header-left {
         gap: 0.5rem;
     }
+    /* Mobile: Bild über dem Text bei .Inhaber */
+    .Inhaber {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        margin-left: 5%;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    .Inhaber img {
+        order: -1; /* Erzwingt Bild oberhalb des Textes */
+        width: 40%;
+        max-width: 200px;
+        height: auto;
+        margin-bottom: 0.5rem;
+    }
+    .Inhaber p {
+        max-width: 100%;
+        text-align: center;
+    }
 }
-#Ueber {
-    background-color: #0099D5;
-    padding: 1.1%;
-    border-radius: 0.3%;
-    box-shadow: 0% 0.1% 0.2% rgba(0, 0, 0, 0.1);
-    margin-top: 1.1%;
-    margin-left: 5%;
+/* Verbesserte Darstellung für Leistungen (Grid, Cards, responsive) */
+#Leistungen {
     text-align: center;
-    /*font-size: 1.1%;*/
-    font-size: 150%;
-    color: #0000;
-    max-width: 90%;
-}
-#Ueber_uns {
-    color: white;
-}
-#ueber_text {
-    color: #333;
-    /*max-width: 66.7%;
-    margin-left: 16.7%;
-    margin-top: -1.1%;
-    line-height: 1.5;*/
-}
-.Inhaber-container {
-    margin-bottom: 1.1%;
-}
-.Inhaber {
-    display: flex;
-    flex-direction: row; /* Ändert die Richtung auf horizontal */
-    align-items: center;
-    justify-content: center;
-    gap: 20%; /* Abstand zwischen Bild und Text */
-    /*margin-bottom: 30px;*/
-    margin-top: 1.1%;
-    padding: 1.1%;
-    border-radius: 0.3%;
-    /*background-color: rgba(0, 0, 0, 0.5);*/
-    background-color: #0099D5;
-    width: 50%;
-    margin-left: 22.2%;
-}
-.Inhaber img {
-    width: 11.1%;
-    height: 9.4%;
-    margin-bottom: 0.3%;
-}
-.Inhaber p {
-    text-align: center;
-    max-width: 33.4%;
-}
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #0099D5;
-    color: black;
-    padding: 2rem 2rem 1rem 2rem;
-    position: relative;
-    gap: 0;
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+    color: #222;
+    letter-spacing: 0.2px;
 }
 
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    flex: 0 0 auto; /* Nimmt nur so viel Platz wie nötig */
+#Leistungen-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+    padding: 0 1rem;
+    box-sizing: border-box;
 }
 
-.header-center {
-    flex: 1 1 0;
+.leistungen-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    align-items: stretch;
+}
+
+/* Card */
+.leistung-card {
+    background: #ffffff;
+    border-radius: 0.6rem;
+    box-shadow: 0 8px 24px rgba(10,10,10,0.06);
+    padding: 1.1rem;
     display: flex;
     flex-direction: column;
+    gap: 0.9rem;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+    text-align: center;
+    overflow: hidden;
+    min-height: 300px;
+}
+
+.leistung-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(10,10,10,0.09);
+}
+
+.leistung-title {
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: #06364a;
+    margin-top: 0.2rem;
+}
+
+/* dekorativer Bildbereich (Icon/Illustration) */
+.leistung-img {
+    height: 140px;
+    border-radius: 0.5rem;
+    display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 0;
-    text-align: center; /* Zentriert Text horizontal */
+    color: rgba(255,255,255,0.95);
+    font-size: 48px;
+    flex: 0 0 auto;
 }
 
-#firmenname {
-    margin: 0;
-    font-size: 2.8rem;
-    text-align: center;
-    width: 100%;
+/* Farbcodierung je Karte */
+.leistung-seo .leistung-img {
+    background: linear-gradient(135deg,#4facfe 0%,#00f2fe 100%);
+}
+.leistung-webdesign .leistung-img {
+    background: linear-gradient(135deg,#7f7fd5 0%,#86a8e7 50%,#91eae4 100%);
+}
+.leistung-beratung .leistung-img {
+    background: linear-gradient(135deg,#f6d365 0%,#fda085 100%);
+}
+.leistung-digitalisierung .leistung-img {
+    background: linear-gradient(135deg,#84fab0 0%,#8fd3f4 100%);
 }
 
-#werbespruch {
-    color: #f5f5f5;
+/* kleine Icon-Platzhalter mit Emoji (kann später durch Bilder ersetzt werden) */
+.leistung-img::before {
+    content: attr(data-icon);
+}
+
+/* Beschreibung */
+.leistung-desc {
+    flex: 1 1 auto;
+    color: #444;
+    line-height: 1.45;
+    font-size: 0.98rem;
+    margin-top: 0.2rem;
+}
+
+/* Verbesserter Footer: sauber, responsive, immer unten */
+.footer {
+    margin-top: auto;                         /* bleibt am Seitenende (body ist flex) */
+    background: linear-gradient(180deg,#06364a 0%, #0b4660 100%);
+    color: #e9f7fb;
+    padding: 1.2rem 1rem;
+    box-shadow: 0 -6px 20px rgba(4,30,40,0.12);
+    border-top: 3px solid rgba(255,255,255,0.03);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.95rem;
+}
+
+/* Footer links / Legal */
+#footer-text {
     margin: 0;
-    font-size: 1.5rem;
-    text-align: center;
-    width: 100%;
+    flex: 1 1 320px;
+    color: rgba(233,247,251,0.95);
+    text-align: left;
 }
-.dropbtn {
-    background-color: #383838;
-    color: white;
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: 0.2rem;
-    cursor: pointer;
-    margin: 0;
+
+/* Rechts/zentraler Bereich mit Links */
+#legal-links {
+    flex: 0 1 auto;
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: flex-end;
+    white-space: nowrap;
 }
-.dropdown-content {
-    display: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 110%;
-    background-color: #303030;
-    min-width: 160px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    z-index: 10;
-    border-radius: 0.2rem;
-    text-align: center;
+
+/* Link-Styling */
+#legal-links a,
+#legal-links-text {
+    color: rgba(233,247,251,0.9);
+    text-decoration: none;
+    padding: 6px 8px;
+    border-radius: 6px;
+    transition: background-color 160ms ease, color 160ms ease;
+    font-weight: 500;
+    font-size: 0.92rem;
 }
-.dropdown-content a {
+
+#legal-links a:hover,
+#legal-links-text:hover {
+    background: rgba(255,255,255,0.06);
     color: #ffffff;
-    padding: 0.7rem 1rem;
-    text-decoration: underline overline;
-    display: block;
-    border-bottom: 1px solid #eee;
-    margin: 0;
-}
-.dropdown-content a:last-child {
-    border-bottom: none;
-}
-.dropdown-content a:hover {
-    background-color: #575757;
-}
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content {
-    display: block;
 }
 
-/* Responsive Anpassungen */
-@media (max-width: 1024px) {
-    header {
+/* Kleine Trennstriche für Desktop (wird auf Mobil entfernt) */
+#legal-links a + a::before {
+    content: "|";
+    margin: 0 8px;
+    color: rgba(233,247,251,0.45);
+}
+
+/* Responsive: auf kleinen Bildschirmen zentriert und gestapelt */
+@media (max-width: 600px) {
+    .footer {
+        padding: 1rem;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        gap: 0.7rem;
-        padding: 2rem 0 1rem 0;
+        text-align: center;
+        gap: 0.6rem;
+    }
+    #footer-text {
+        flex: none;
+        order: 1;
+        font-size: 0. nine; /* fallback, below we set concrete */
+        margin-bottom: 0;
         text-align: center;
     }
-    .header-left {
-        flex-direction: row;
+    #legal-links {
+        order: 2;
         justify-content: center;
-        margin-bottom: 0.5rem;
+        flex-wrap: wrap;
+        gap: 0.4rem;
     }
-    #Firmenlogo {
-        margin: 0 0.8rem 0 0;
-        width: 80px;
-        max-width: 25vw;
+    /* entferne die | Trennzeichen auf Mobil */
+    #legal-links a + a::before { content: ""; margin: 0; }
+    #legal-links a,
+    #legal-links-text {
+        font-size: 0.88rem;
+        padding: 6px 10px;
     }
-    .header-center {
-        width: 100%;
-    }
-    #firmenname {
-        font-size: 2.2rem;
-    }
-    #werbespruch {
-        font-size: 1.3rem;
-    }
-    .dropdown-container {
-        margin: 0;
-        width: auto;
-        justify-content: center;
-    }
-}
-@media (max-width: 600px) {
-    #firmenname {
-        font-size: 1.5rem;
-    }
-    #werbespruch {
-        font-size: 1.1rem;
-    }
-    #Firmenlogo {
-        width: 60px;
-        max-width: 40vw;
-    }
-    .header-left {
-        gap: 0.5rem;
-    }
-}
-#Ueber {
-    background-color: #0099D5;
-    padding: 1.1%;
-    border-radius: 0.3%;
-    box-shadow: 0% 0.1% 0.2% rgba(0, 0, 0, 0.1);
-    margin-top: 1.1%;
-    margin-left: 5%;
-    text-align: center;
-    /*font-size: 1.1%;*/
-    font-size: 150%;
-    color: #0000;
-    max-width: 90%;
-}
-#Ueber_uns {
-    color: white;
-}
-#ueber_text {
-    color: #333;
-    /*max-width: 66.7%;
-    margin-left: 16.7%;
-    margin-top: -1.1%;
-    line-height: 1.5;*/
-}
-.Inhaber-container {
-    margin-bottom: 1.1%;
-}
-.Inhaber {
-    display: flex;
-    flex-direction: row; /* Ändert die Richtung auf horizontal */
-    align-items: center;
-    justify-content: center;
-    gap: 20%; /* Abstand zwischen Bild und Text */
-    /*margin-bottom: 30px;*/
-    margin-top: 1.1%;
-    padding: 1.1%;
-    border-radius: 0.3%;
-    /*background-color: rgba(0, 0, 0, 0.5);*/
-    background-color: #0099D5;
-    width: 50%;
-    margin-left: 22.2%;
-}
-.Inhaber img {
-    width: 11.1%;
-    height: 9.4%;
-    margin-bottom: 0.3%;
-}
-.Inhaber p {
-    text-align: center;
-    max-width: 33.4%;
-}
-header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #0099D5;
-    color: black;
-    padding: 2rem 2rem 1rem 2rem;
-    position: relative;
-    gap: 0;
 }
 
-.header-left {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    flex: 0 0 auto; /* Nimmt nur so viel Platz wie nötig */
+/* Kontrast / Lesbarkeit für sehr kleine Mobilgeräte */
+@media (max-width: 360px) {
+    .footer { padding: 0.8rem; }
+    #footer-text { font-size: 0.82rem; }
+    #legal-links a { font-size: 0.8rem; padding: 5px 8px; }
 }
 
-.header-center {
-    flex: 1 1 0;
+/* Kontaktformular: Card, Grid, Inputs, Mobile-first */
+.contact-card {
+    width: 100%;
+    max-width: 980px;
+    margin: 1.6rem auto 2.4rem;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 12px 30px rgba(4,30,40,0.08);
+    box-sizing: border-box;
+    border: 1px solid rgba(6,54,74,0.04);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem 1rem;
+    align-items: start;
+}
+
+.form-field {
     display: flex;
     flex-direction: column;
+    gap: 0.45rem;
+}
+
+.form-field.full {
+    grid-column: 1 / -1;
+}
+
+.label-text {
+    font-size: 0.92rem;
+    color: #06364a;
+    font-weight: 600;
+}
+
+.small { font-weight: 500; font-size: 0.85rem; color:#444; }
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid rgba(6,54,74,0.12);
+    background: #fbfeff;
+    font-size: 0.95rem;
+    color: #06364a;
+    box-sizing: border-box;
+    transition: box-shadow 140ms ease, border-color 140ms ease, transform 80ms ease;
+}
+
+.textarea { resize: vertical; min-height: 120px; }
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: #0b99d1;
+    box-shadow: 0 6px 20px rgba(11,153,209,0.12);
+    transform: translateY(-1px);
+}
+
+.file-input {
+    padding: 0.4rem 0.5rem;
+    font-size: 0.92rem;
+    border-radius: 8px;
+    border: 1px dashed rgba(6,54,74,0.12);
+    background: linear-gradient(180deg,#ffffff,#fbfeff);
+}
+
+.radio-row {
+    display: flex;
+    gap: 0.8rem;
     align-items: center;
-    justify-content: center;
-    min-width: 0;
-    text-align: center; /* Zentriert Text horizontal */
 }
 
-#firmenname {
-    margin: 0;
-    font-size: 2.8rem;
-    text-align: center;
-    width: 100%;
+.small-checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #06364a;
+    background: rgba(6,54,74,0.03);
+    padding: 6px 10px;
+    border-radius: 8px;
 }
 
-#werbespruch {
-    color: #f5f5f5;
-    margin: 0;
-    font-size: 1.5rem;
-    text-align: center;
-    width: 100%;
+.actions {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: flex-end;
+    align-items: center;
 }
-.dropbtn {
-    background-color: #383838;
-    color: white;
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
+
+.btn-primary {
+    background: linear-gradient(90deg,#0b99d1,#06364a);
+    color: #fff;
     border: none;
-    border-radius: 0.2rem;
+    padding: 0.64rem 1rem;
+    border-radius: 10px;
+    font-weight: 700;
     cursor: pointer;
-    margin: 0;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 110%;
-    background-color: #303030;
-    min-width: 160px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    z-index: 10;
-    border-radius: 0.2rem;
-    text-align: center;
-}
-.dropdown-content a {
-    color: #ffffff;
-    padding: 0.7rem 1rem;
-    text-decoration: underline overline;
-    display: block;
-    border-bottom: 1px solid #eee;
-    margin: 0;
-}
-.dropdown-content a:last-child {
-    border-bottom: none;
-}
-.dropdown-content a:hover {
-    background-color: #575757;
-}
-.dropdown:hover .dropdown-content,
-.dropdown:focus-within .dropdown-content {
-    display: block;
+    box-shadow: 0 8px 20px rgba(6,54,74,0.12);
+    transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms;
 }
 
-/* Responsive Anpassungen */
-@media (max-width: 1024px) {
-    header {
+.btn-primary:hover { transform: translateY(-3px); opacity: 0.98; box-shadow: 0 14px 36px rgba(6,54,74,0.14); }
+
+.btn-ghost {
+    background: transparent;
+    border: 1px solid rgba(6,54,74,0.09);
+    color: #06364a;
+    padding: 0.5rem 0.85rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Responsive: single column on small screens */
+@media (max-width: 900px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .actions { justify-content: center; }
+    .contact-card { padding: 1rem; margin: 1rem; }
+}
+
+/* Tight mobile adjustments */
+@media (max-width: 420px) {
+    .label-text { font-size: 0.88rem; }
+    .input, .textarea { font-size: 0.95rem; padding: 0.6rem; }
+    .btn-primary { width: 100%; }
+    .actions { gap: 0.5rem; flex-direction: column-reverse; }
+}
+
+/* Kompaktes Mobile-Header-Layout (macht Header wie im Impressum) */
+@media (max-width: 900px) {
+    .compact-mobile-header .site-header .header-inner {
         flex-direction: column;
         align-items: center;
-        justify-content: flex-start;
-        gap: 0.7rem;
-        padding: 2rem 0 1rem 0;
-        text-align: center;
+        gap: 0.35rem;
+        padding: 0.9rem 1rem;
     }
-    .header-left {
-        flex-direction: row;
-        justify-content: center;
-        margin-bottom: 0.5rem;
+    .compact-mobile-header .logo-wrap { order: 1; }
+    .compact-mobile-header .site-header #Firmenlogo {
+        width: 88px;
+        height: auto;
+        margin-bottom: 0.2rem;
     }
-    #Firmenlogo {
-        margin: 0 0.8rem 0 0;
-        width: 80px;
-        max-width: 25vw;
-    }
-    .header-center {
-        width: 100%;
-    }
-    #firmenname {
-        font-size: 2.2rem;
-    }
-    #werbespruch {
-        font-size: 1.3rem;
-    }
-    .dropdown-container {
+    .compact-mobile-header .brand { order: 2; text-align: center; }
+    .compact-mobile-header .brand #firmenname {
+        font-size: 1.15rem;
+        white-space: normal;
         margin: 0;
-        width: auto;
-        justify-content: center;
+    }
+    .compact-mobile-header .brand #werbespruch {
+        font-size: 0.95rem;
+        margin: 0;
+        color: rgba(234,247,251,0.95);
+    }
+    .compact-mobile-header .nav { order: 3; width: 100%; justify-content: center; margin-top: 0.25rem; }
+    .compact-mobile-header .dropdown-content {
+        left: 50%;
+        transform: translateX(-50%);
+        right: auto;
+        min-width: 200px;
     }
 }
-@media (max-width: 600px) {
-    #firmenname {
-        font-size: 1.5rem;
-    }
-    #werbespruch {
-        font-size: 1.1rem;
-    }
-    #Firmenlogo {
-        width: 60px;
-        max-width: 40vw;
-    }
-    .header-left {
-        gap: 0.5rem;
-    }
+#Kontakt {
+    text-align: center;
 }
