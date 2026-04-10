@@ -1,0 +1,170 @@
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riefix Strategie &amp; Consulting</title>
+  <meta name="description" content="Riefix Strategie &amp; Consulting – Beratung, Strategieentwicklung und digitale Lösungen für Unternehmen.">
+  <link rel="icon" href="/Pictures/Firmenlogo.ico" type="image/x-icon">
+  <!-- Optional: Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;display=swap" rel="stylesheet">
+  <!-- Optional: CSS Datei -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Optional: Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+<body class="compact-mobile-header">
+    <header class="site-header" role="banner">
+      <div class="header-inner">
+        <div class="logo-wrap">
+          <img id="Firmenlogo" src="Firmenlogo.png" alt="Riefix Logo">
+        </div>
+
+        <div class="brand" role="heading" aria-level="1">
+          <h1 id="firmenname">Riefix Strategie &amp; Consulting</h1>
+          <p id="werbespruch">Ihr Partner für messbaren Erfolg</p>
+        </div>
+
+        <div class="nav" role="navigation" aria-label="Hauptnavigation">
+          <div class="dropdown">
+            <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Menü</button>
+            <div class="dropdown-content" role="menu" aria-hidden="true">
+              <a role="menuitem" href="index.html">Startseite</a>
+              <a role="menuitem" href="Leistungen.html">Leistungen</a>
+              <a role="menuitem" href="Kontakt.html">Kontakt</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <h1 id="Kontakt">Kontaktier uns!</h1>
+
+    <form id="contact-form"
+     action="https://formspree.io/f/xjkapyyn"
+     method="POST"
+     class="contact-card"
+     aria-label="Kontaktformular"
+    >
+  <div class="form-grid">
+    <label class="form-field">
+      <span class="label-text">Deine E-Mail</span>
+      <input class="input" type="email" name="email" required placeholder="name@beispiel.de">
+    </label>
+
+    <label class="form-field">
+      <span class="label-text">Anliegen</span>
+      <select class="input" name="anliegen" id="anliegen-select" required>
+        <option value="" disabled selected>Bitte wählen...</option>
+        <option value="beratung">Beratung</option>
+        <option value="angebot">Angebot einholen</option>
+        <option value="support">Support</option>
+        <option value="sonstiges">Sonstiges</option>
+      </select>
+    </label>
+
+    <div id="angebot-leistungen" class="form-field" style="display:none;">
+      <span class="label-text">Gewünschte Leistung</span>
+      <select class="input" name="leistung" id="leistung-select">
+        <option value="" disabled selected>Bitte wählen...</option>
+        <option value="seo">SEO-Optimierung</option>
+        <option value="webdesign">Webdesign</option>
+        <option value="beratung">Strategieberatung</option>
+        <option value="digitalisierung">Digitalisierung</option>
+      </select>
+    </div>
+
+    <div id="support-fields" class="form-field" style="display:none;">
+      <span class="label-text">Sind Sie bereits Kunde?</span>
+      <div class="radio-row">
+        <label class="small-checkbox"><input type="checkbox" name="kunde" value="ja" id="kunde-ja"> Ja</label>
+        <label class="small-checkbox"><input type="checkbox" name="kunde" value="nein" id="kunde-nein"> Nein</label>
+      </div>
+      <label class="label-block">
+        <span class="label-text small">Projektname oder Kundennummer</span>
+        <input class="input" type="text" name="projektname" id="projektname" placeholder="Optional">
+      </label>
+    </div>
+
+    <label class="form-field full">
+      <span class="label-text">Thema / Betreff</span>
+      <input class="input" type="text" name="betreff" required placeholder="Worum geht es?">
+    </label>
+
+    <label class="form-field full">
+      <span class="label-text">Nachricht</span>
+      <textarea class="textarea" name="message" required placeholder="Ihre Nachricht..." rows="6"></textarea>
+    </label>
+
+    <label class="form-field">
+      <span class="label-text">Datei (optional)</span>
+      <input class="file-input" type="file" name="attachment" accept=".jpg,.jpeg,.png,.pdf,.doc,.docx">
+    </label>
+
+    <div class="form-field full actions">
+      <button type="submit" id="send-button" class="btn-primary">Senden</button>
+      <button type="reset" class="btn-ghost">Zurücksetzen</button>
+    </div>
+  </div>
+</form>
+
+  <footer class="footer">
+    <p id="footer-text">© 2025 <!--Riefix Strategie &amp; Consulting-->Schlebach Digital. Alle Rechte vorbehalten.</p>
+    <div id="legal-links">
+      <a href="Impressum.html" id="legal-links-text">Impressum</a><!-- | --><a href="Privacy_Policy.html" id="legal-links-text">Privacy Policy</a><!-- | --><a href="AGB.html" id="legal-links-text">AGB</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const anliegenSelect = document.getElementById('anliegen-select');
+  const supportFields = document.getElementById('support-fields');
+  const angebotLeistungen = document.getElementById('angebot-leistungen');
+  const kundeJa = document.getElementById('kunde-ja');
+  const kundeNein = document.getElementById('kunde-nein');
+  const projektname = document.getElementById('projektname');
+
+  // Nur eine Checkbox auswählbar machen
+  if (kundeJa && kundeNein) {
+    kundeJa.addEventListener('change', function() {
+      if (kundeJa.checked) kundeNein.checked = false;
+    });
+    kundeNein.addEventListener('change', function() {
+      if (kundeNein.checked) kundeJa.checked = false;
+    });
+  }
+
+  if (anliegenSelect) {
+    anliegenSelect.addEventListener('change', function() {
+      // Support-Felder anzeigen/verstecken
+      if (anliegenSelect.value === 'support') {
+        supportFields.style.display = 'block';
+      } else {
+        supportFields.style.display = 'none';
+        if (kundeJa) kundeJa.checked = false;
+        if (kundeNein) kundeNein.checked = false;
+        if (projektname) projektname.value = '';
+      }
+      // Angebots-Leistungen anzeigen/verstecken
+      if (anliegenSelect.value === 'angebot') {
+        angebotLeistungen.style.display = 'block';
+      } else {
+        angebotLeistungen.style.display = 'none';
+        const leistungSelect = document.getElementById('leistung-select');
+        if (leistungSelect) leistungSelect.selectedIndex = 0;
+      }
+    });
+    // Initial prüfen (falls Browser Autofill macht)
+    if (anliegenSelect.value === 'support') {
+      supportFields.style.display = 'block';
+    }
+    if (anliegenSelect.value === 'angebot') {
+      angebotLeistungen.style.display = 'block';
+    }
+  }
+});
+</script>
+
+</body>
+</html>
