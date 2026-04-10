@@ -19,14 +19,57 @@
       --text: #d8e4ee;
     }
 
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+        .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      background: #1a2e42;
+      padding: 12px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      border-radius: 6px;
+      z-index: 10;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 10px 20px;
+      color: #d8e4ee;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover {
+      background: rgba(232,160,32,0.1);
+    }
+
+        .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+      display: block;
+    }
+
+    .dropbtn {
+      background: none;
+      border: 1px solid rgba(232,160,32,0.25);
+      color: var(--accent);
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
     body {
       background-color: var(--navy);
       font-family: 'DM Sans', sans-serif;
       color: var(--text);
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
       padding: 60px 24px;
       overflow-x: hidden;
     }
@@ -283,6 +326,35 @@
     .footer-quote p span {
       color: var(--accent);
     }
+    
+    .footer {
+      margin-top: 60px;
+      margin-bottom: -50px;
+      padding: 30px;
+      position: relative;
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+      background-color: var(--navy-mid);
+    }
+
+    #legal-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    #legal-links-text {
+      color: #c0c0c0;
+      text-decoration: none;
+    }
+
+    #legal-links-text:hover {
+      color: var(--accent);
+    }
 
     /* Animate on load */
     .card, .footer-quote {
@@ -305,6 +377,20 @@
 <section class="section">
 
   <div class="section-header">
+    <div class="nav" role="navigation" aria-label="Hauptnavigation">
+      <div class="dropdown">
+        <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Menü</button>
+        <div class="dropdown-content" role="menu" aria-hidden="true">
+          <a role="menuitem" href="index.html">Startseite</a>
+          <a role="menuitem" href="Leistungen.html">Leistungen</a>
+          <a role="menuitem" href="Kontakt.html">Kontakt</a>
+          <a role="menuitem" href="Gruender.html">Gründer</a>
+          <a role="menuitem" href="Impressum.html">Impressum</a>
+          <a role="menuitem" href="Datenschutz.html">Datenschutz</a>
+          <a role="menuitem" href="AGB.html">AGB</a>
+        </div>
+      </div>
+    </div>
     <div class="section-label">Die Gründer</div>
     <h2 class="section-title">Zwei Handwerker.<br><span>Eine Vision.</span></h2>
   </div>
@@ -375,6 +461,13 @@
   </div>
 
 </section>
+
+<footer class="footer">
+  <p id="footer-text">© 2025 <!--Riefix Strategie &amp; Consulting-->Justus Schlebach. Alle Rechte vorbehalten.</p>
+  <div id="legal-links">
+    <a href="Impressum.html" id="legal-links-text">Impressum</a><!-- | --><a href="Privacy_Policy.html" id="legal-links-text">Privacy Policy</a><!-- | --><a href="AGB.html" id="legal-links-text">AGB</a>
+  </div>
+</footer>
 
 </body>
 </html>

@@ -1,78 +1,336 @@
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Riefix Strategie &amp; Consulting</title>
-  <meta name="description" content="Riefix Strategie &amp; Consulting – Beratung, Strategieentwicklung und digitale Lösungen für Unternehmen.">
-  <link rel="icon" href="/Pictures/Firmenlogo.ico" type="image/x-icon">
-  <!-- Optional: Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;display=swap" rel="stylesheet">
-  <!-- Optional: CSS Datei -->
-  <link rel="stylesheet" href="styles.css">
-  <!-- Optional: Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unser Team</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0d1b2a;
+      --navy-mid: #1a2e42;
+      --steel: #2c4a63;
+      --accent: #e8a020;
+      --accent-light: #f5c060;
+      --off-white: #f0ece4;
+      --muted: #8da0b3;
+      --text: #d8e4ee;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+        .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+      background: #1a2e42;
+      padding: 12px 0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      border-radius: 6px;
+      z-index: 10;
+    }
+    .dropdown-content a {
+      display: block;
+      padding: 10px 20px;
+      color: #d8e4ee;
+      text-decoration: none;
+    }
+    .dropdown-content a:hover {
+      background: rgba(232,160,32,0.1);
+    }
+
+        .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+      display: block;
+    }
+
+    .dropbtn {
+      background: none;
+      border: 1px solid rgba(232,160,32,0.25);
+      color: var(--accent);
+      padding: 8px 16px;
+      font-size: 14px;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
+    body {
+      background-color: var(--navy);
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 24px;
+      overflow-x: hidden;
+    }
+
+    /* Background texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 20%, rgba(232,160,32,0.06) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 60% at 80% 80%, rgba(44,74,99,0.4) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .section {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      width: 100%;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    /* Header */
+    .section-header {
+      margin-bottom: 64px;
+    }
+
+    .section-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      color: var(--off-white);
+      line-height: 1.05;
+    }
+
+    .section-title span {
+      color: var(--accent);
+    }
+
+    /* Cards grid */
+    .starter-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 2px;
+    }
+
+    @media (max-width: 520px) {
+      .starter-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Card */
+    .card {
+      background: var(--navy-mid);
+      padding: 48px 44px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .card:first-child {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+    .card:last-child {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--accent);
+      transition: height 0.4s ease;
+    }
+
+    .card:hover::before { height: 100%; }
+    .card:hover { transform: translateY(-4px); }
+
+    /* Large background number */
+    .card-number {
+      position: absolute;
+      top: -10px;
+      right: 24px;
+      font-family: 'Syne', sans-serif;
+      font-size: 140px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* Avatar circle */
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--steel), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--off-white);
+      margin-bottom: 28px;
+      flex-shrink: 0;
+    }
+
+    /* Name & role */
+    .card-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--off-white);
+      margin-bottom: 6px;
+      line-height: 1.1;
+    }
+
+    .card-role {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+    }
+
+    /* Divider */
+    .divider {
+      width: 32px;
+      height: 2px;
+      background: var(--steel);
+      margin-bottom: 28px;
+    }
+
+    /* Bio */
+    .card-bio {
+      font-size: 15.5px;
+      line-height: 1.75;
+      color: var(--muted);
+      font-weight: 300;
+      margin-bottom: 36px;
+    }
+
+    .card-bio strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .footer {
+      margin-top: 60px;
+      margin-bottom: -20px;
+      position: relative;
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+    }
+
+    #legal-links {
+      display: flex;
+      gap: 30px;
+    }
+
+    #legal-links-text {
+      color: #c0c0c0;
+      text-decoration: none;
+    }
+
+    #legal-links-text:hover {
+      color: var(--accent);
+    }
+
+    /* Animate on load */
+    .card {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.7s ease forwards;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.25s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    </style>
 </head>
-<body class="compact-mobile-header">
-  <header class="site-header" role="banner">
-  <div class="header-inner">
-    <div class="logo-wrap">
-      <img id="Firmenlogo" src="Firmenlogo.png" alt="Riefix Logo">
-    </div>
+<body>
 
-    <div class="brand" role="heading" aria-level="1">
-      <h1 id="firmenname">Riefix Strategie &amp; Consulting</h1>
-      <p id="werbespruch">Ihr Partner für messbaren Erfolg</p>
-    </div>
+<section class="section">
 
+  <div class="section-header">
     <div class="nav" role="navigation" aria-label="Hauptnavigation">
       <div class="dropdown">
         <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Menü</button>
         <div class="dropdown-content" role="menu" aria-hidden="true">
-          <!--a role="menuitem" href="index.html">Startseite</a-->
+          <a role="menuitem" href="index.html">Startseite</a>
           <a role="menuitem" href="Leistungen.html">Leistungen</a>
           <a role="menuitem" href="Kontakt.html">Kontakt</a>
           <a role="menuitem" href="Gruender.html">Gründer</a>
+          <a role="menuitem" href="Impressum.html">Impressum</a>
+          <a role="menuitem" href="Datenschutz.html">Datenschutz</a>
+          <a role="menuitem" href="AGB.html">AGB</a>
         </div>
       </div>
     </div>
-  </div>
-</header>
-  <div id="Ueber">
-    <h2 id="Ueber_uns">Über uns</h2>
-    <p id="ueber_text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et<br> 
-      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br> 
-      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.<br> 
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et<br> 
-      dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br> 
-      Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-  </div>
-  <div class="Inhaber-container">
-    <div class="Inhaber">
-      <img src="Platzhalterbild M.jpeg" alt="Markus Fichtler">
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut<br> 
-        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br> 
-        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,<br> 
-        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,<br> 
-        sed diam voluptua. At</p>
-    </div>
-    <div class="Inhaber">
-      <img src="Platzhalterbild M.jpeg" alt="Freddy Rieck">
-      <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut<br> 
-        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br> 
-        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet,<br> 
-        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,<br> 
-        sed diam voluptua. At</p>
-    </div>
+    <div class="section-label">Riefix</div>
+    <h2 class="section-title">Connection.<br><span>Die was bringt.</span></h2>
   </div>
 
-  <footer class="footer">
-    <p id="footer-text">© 2025 <!--Riefix Strategie &amp; Consulting-->Schlebach Digital. Alle Rechte vorbehalten.</p>
-    <div id="legal-links">
-      <a href="Impressum.html" id="legal-links-text">Impressum</a><!-- | --><a href="Privacy_Policy.html" id="legal-links-text">Privacy Policy</a><!-- | --><a href="AGB.html" id="legal-links-text">AGB</a>
+  <div class="starter-grid">
+    <div class="card">
+      <div class="card-number">WIR</div>
+      <div class="avatar">Wir</div>
+      <div class="card-name">Was wir bieten</div>
+      <div class="card-role">Verlässlichkeit · Transparenz · Augenhöhe</div>
+      <div class="divider"></div>
+      <p class="card-bio">
+        Profitieren Sie von der geballten Kompetenz von <strong>Markus Fichtler und Frederik Rieck</strong>: Mit über 40 Jahren Erfahrung in Gebäudetechnik und Facility Management vermitteln wir Ihnen ausschließlich geprüfte Meisterbetriebe für Ihre Immobilie. Wir verstehen Gebäude als Systeme und garantieren Ihnen eine schnelle Rückmeldung (meist innerhalb von 24h) sowie eine professionelle Abwicklung auf Augenhöhe. Fordern Sie jetzt Ihr Angebot an – zu 100 % kostenlos & unverbindlich.
+      </p>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
-</body>
-</html>
+<footer class="footer">
+  <p id="footer-text">© 2025 <!--Riefix Strategie &amp; Consulting-->Justus Schlebach. Alle Rechte vorbehalten.</p>
+  <div id="legal-links">
+    <a href="Impressum.html" id="legal-links-text">Impressum</a><!-- | --><a href="Privacy_Policy.html" id="legal-links-text">Privacy Policy</a><!-- | --><a href="AGB.html" id="legal-links-text">AGB</a>
+  </div>
+</footer>
